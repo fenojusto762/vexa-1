@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="odontoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111c"/>
+      <stop offset="60%" stop-color="#0c1d2e"/>
+      <stop offset="100%" stop-color="#060e17"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e2338"/>
+      <stop offset="100%" stop-color="#081624"/>
+    </linearGradient>
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#0284c7" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Container do Navegador -->
+  <rect width="800" height="500" rx="16" fill="url(#odontoBg)" stroke="#1e3a5f" stroke-width="2"/>
+
+  <!-- Barra de controle de janela estilo macOS -->
+  <rect width="800" height="42" fill="#091522" rx="16"/>
+  <rect y="26" width="800" height="16" fill="#091522"/>
+  <circle cx="26" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="46" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="66" cy="21" r="6" fill="#10b981"/>
+  
+  <!-- Barra de endereço / URL -->
+  <rect x="180" y="9" width="440" height="24" rx="12" fill="#112538"/>
+  <text x="400" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#7dd3fc">
+    🔒 https://drrafaelsilva.com.br/odontologia-digital-3d
+  </text>
+
+  <!-- Top bar / Aviso de Agendamento -->
+  <rect y="42" width="800" height="26" fill="#0369a1"/>
+  <text x="400" y="59" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">
+    ⚡ Atendimento com hora marcada em Brasília • Cirurgia Guiada e Lentes Dentais 3D
+  </text>
+
+  <!-- Navbar -->
+  <rect y="68" width="800" height="56" fill="#07111c" opacity="0.95"/>
+  <text x="40" y="102" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="17" fill="#ffffff">
+    DR. RAFAEL SILVA <tspan fill="#38bdf8" font-size="11" font-weight="600">| CIRURGIA GUIADA &amp; LENTES 3D</tspan>
+  </text>
+  <rect x="625" y="80" width="135" height="32" rx="16" fill="#25d366"/>
+  <text x="692" y="101" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#ffffff">
+    Agendar Avaliação
+  </text>
+
+  <!-- Hero Content da Landing Page -->
+  <rect x="40" y="148" width="200" height="22" rx="11" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text x="140" y="163" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">
+    ODONTOLOGIA DIGITAL &bull; PRECISÃO 3D
+  </text>
+
+  <text x="40" y="206" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="26" fill="#ffffff">
+    Cirurgia Guiada por Computador
+  </text>
+  <text x="40" y="238" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="26" fill="url(#cyanGrad)">
+    &amp; Lentes Dentais 3D.
+  </text>
+
+  <text x="40" y="272" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">
+    Reabilitação oral de alta precisão em Brasília. Diagnóstico tomográfico
+  </text>
+  <text x="40" y="290" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">
+    3D, implantes sem cortes manuais extensos e lentes cerâmicas puras.
+  </text>
+
+  <!-- Card de Avaliação 5 Estrelas -->
+  <g transform="translate(40, 316)">
+    <rect width="260" height="46" rx="8" fill="#0c1d2e" stroke="#1e3a5f" stroke-width="1"/>
+    <text x="14" y="22" font-size="13" fill="#fbbf24">★★★★★</text>
+    <text x="80" y="21" font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#f8fafc">4.9 / 5.0 no Google</text>
+    <text x="14" y="37" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">+320 pacientes atendidos e satisfeitos</text>
+  </g>
+
+  <!-- Botão de Agendamento Rápido -->
+  <rect x="40" y="380" width="230" height="46" rx="8" fill="#25d366"/>
+  <text x="155" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="12.5" fill="#ffffff">
+    QUERO AGENDAR AVALIAÇÃO
+  </text>
+
+  <!-- Painel de Alta Tecnologia 3D (Substitui foto fictícia por dados técnicos reais) -->
+  <g transform="translate(450, 145)" filter="url(#cardGlow)">
+    <rect width="310" height="280" rx="16" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.4"/>
+    
+    <!-- Topo do Card Tecnológico -->
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      Diagnóstico &amp; Cirurgia 3D
+    </text>
+    <rect x="200" y="18" width="90" height="20" rx="10" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="212" cy="28" r="3.5" fill="#34d399"/>
+    <text x="252" y="32" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#34d399">
+      Scanner Ativo
+    </text>
+
+    <!-- Métricas 3D em 2x2 -->
+    <g transform="translate(18, 50)">
+      <!-- Box 1 -->
+      <rect width="130" height="52" rx="8" fill="#07111c" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="12" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#38bdf8">99.8%</text>
+      <text x="12" y="42" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">Precisão Guia 3D</text>
+
+      <!-- Box 2 -->
+      <rect x="142" width="130" height="52" rx="8" fill="#07111c" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="154" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#34d399">-60%</text>
+      <text x="154" y="42" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">Tempo Cirúrgico</text>
+
+      <!-- Box 3 -->
+      <rect y="60" width="130" height="52" rx="8" fill="#07111c" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="12" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#38bdf8">3x Mais</text>
+      <text x="12" y="102" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">Cicatrização Rápida</text>
+
+      <!-- Box 4 -->
+      <rect x="142" y="60" width="130" height="52" rx="8" fill="#07111c" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="154" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#34d399">0 Moldes</text>
+      <text x="154" y="102" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">Scanner Digital Trios</text>
+    </g>
+
+    <!-- Itens de Garantia Clínica -->
+    <g transform="translate(20, 182)">
+      <path d="M 0 6 L 4 10 L 10 2" stroke="#34d399" stroke-width="2" fill="none"/>
+      <text x="18" y="8" font-family="'Inter', sans-serif" font-size="9.5" fill="#cbd5e1">Tomografia Computadorizada Cone Beam HD</text>
+
+      <path d="M 0 26 L 4 30 L 10 22" stroke="#34d399" stroke-width="2" fill="none"/>
+      <text x="18" y="28" font-family="'Inter', sans-serif" font-size="9.5" fill="#cbd5e1">Planejamento e Mock-up Digital 3D prévio</text>
+
+      <path d="M 0 46 L 4 50 L 10 42" stroke="#34d399" stroke-width="2" fill="none"/>
+      <text x="18" y="48" font-family="'Inter', sans-serif" font-size="9.5" fill="#cbd5e1">Cerâmica Alemã Pura E-Max de Alta Resistência</text>
+    </g>
+
+    <!-- Credencial Médica Oficial -->
+    <line x1="20" y1="248" x2="290" y2="248" stroke="#1e3a5f" stroke-width="1"/>
+    <text x="20" y="266" font-family="'Inter', sans-serif" font-size="9.5" fill="#94a3b8">
+      Resp. Técnico: <tspan fill="#ffffff" font-weight="700">Dr. Rafael Silva</tspan> &bull; CRO-DF 14.890
+    </text>
+  </g>
+</svg>

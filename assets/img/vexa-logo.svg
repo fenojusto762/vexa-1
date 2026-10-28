@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 64" fill="none">
+  <defs>
+    <!-- Gradiente Neon Esmeralda Tecnológico -->
+    <linearGradient id="vxNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f59b"/>
+      <stop offset="60%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Gradiente Cyber Platinum / Titanium White -->
+    <linearGradient id="vxSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <!-- Gradiente Suave de Destaque -->
+    <linearGradient id="vxAccentGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00f59b" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Filtro de Brilho Neon Profissional -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#00f59b" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#ffffff" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Sombra Suave de Profundidade 3D -->
+    <filter id="shadow3D" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- LOGOTIPO VX - MONOGRAMA PROFISSIONAL VEXA WEB -->
+  <g id="vx-logo-monogram" filter="url(#shadow3D)">
+    <!-- ==================== LETRA V ==================== -->
+    <!-- Braço Esquerdo V (Cyber Silver / Aço Titânio) -->
+    <path 
+      d="M 20 12 L 33 12 L 45 41 L 39 52 L 30 52 Z" 
+      fill="url(#vxSilver)"
+    />
+
+    <!-- Braço Direito V (Esmeralda Neon com Glow) -->
+    <path 
+      d="M 48 52 L 53 41 L 65 12 L 78 12 L 58 52 Z" 
+      fill="url(#vxNeon)"
+      filter="url(#neonGlow)"
+    />
+
+    <!-- ==================== LETRA X ==================== -->
+    <!-- Diagonal 1: Superior Esquerda para Inferior Direita (Cyber Silver) -->
+    <path 
+      d="M 88 12 L 100 12 L 138 52 L 126 52 Z" 
+      fill="url(#vxSilver)"
+    />
+
+    <!-- Diagonal 2 - Segmento Inferior Esquerdo (Neon Esmeralda com Corte Óptico) -->
+    <path 
+      d="M 88 52 L 100 52 L 107 41 L 98 41 Z" 
+      fill="url(#vxNeon)"
+      filter="url(#neonGlow)"
+    />
+
+    <!-- Diagonal 2 - Segmento Superior Direito (Neon Esmeralda com Corte Óptico) -->
+    <path 
+      d="M 119 23 L 128 23 L 138 12 L 126 12 Z" 
+      fill="url(#vxNeon)"
+      filter="url(#neonGlow)"
+    />
+
+    <!-- Ponto de Conexão Tecnológico (Cyber Dot Neon) -->
+    <circle cx="147" cy="14" r="2.8" fill="#00f59b" filter="url(#neonGlow)"/>
+  </g>
+</svg>

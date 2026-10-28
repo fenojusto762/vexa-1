@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Botanicals | Skincare Vegano & Fitoativos de Alta Performance (Demonstração)</title>
+  <meta name="description" content="Demonstração conceitual de loja virtual moderna com catálogo botânico de alta cosmética, carrinho interativo e checkout direto no WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --accent-gold: #fbbf24;
+      --bg: #0b1411;
+      --bg-surface: #101c18;
+      --card-bg: #14241f;
+      --card-border: rgba(16, 185, 129, 0.18);
+      --card-border-hover: rgba(52, 211, 153, 0.45);
+      --text: #f0fdf4;
+      --text-muted: #94a3b8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Barra de Demonstração */
+    .demo-bar {
+      background: #0d1a15;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      padding: 7px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .badge {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    /* Promo Bar */
+    .promo-bar {
+      background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+      color: #061911;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 15px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(11, 20, 17, 0.94);
+      backdrop-filter: blur(14px);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--primary); }
+
+    .cart-btn {
+      background: var(--primary);
+      color: #052e16;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    .cart-btn:hover { 
+      background: #34d399; 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .cart-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    .cart-count {
+      background: #052e16;
+      color: #fff;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(145deg, #132620 0%, #0c1813 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 38px 40px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 36px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .luxury-eyebrow {
+      color: #34d399;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .hero-text-col h1 { 
+      font-size: 2.6rem; 
+      line-height: 1.2; 
+      margin-bottom: 14px; 
+      letter-spacing: -0.5px;
+    }
+    .hero-text-col h1 span { 
+      background: linear-gradient(135deg, #34d399 0%, #a7f3d0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-text-col p { 
+      color: var(--text-muted); 
+      font-size: 1.05rem; 
+      max-width: 520px; 
+      line-height: 1.6;
+    }
+
+    /* Selos de Certificação em Linha */
+    .cert-badges-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 24px;
+    }
+    .cert-pill {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 20px;
+      padding: 6px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #d1fae5;
+      font-weight: 600;
+    }
+    .cert-pill svg {
+      width: 15px;
+      height: 15px;
+      color: #34d399;
+      flex-shrink: 0;
+    }
+    .btn-shop-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #052e16;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 12px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+      width: fit-content;
+    }
+    .btn-shop-now:hover {
+      background: #34d399;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    }
+    .btn-shop-now svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+    }
+
+    /* Coluna de Imagem de Capa Fotográfica de Luxo */
+    .hero-cover-col {
+      display: flex;
+      justify-content: center;
+    }
+    .luxury-cover-frame {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+      background: #0b1411;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+    .luxury-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .luxury-cover-frame:hover .luxury-cover-img {
+      transform: scale(1.03);
+    }
+    .luxury-cover-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 20, 17, 0.08) 0%, rgba(11, 20, 17, 0.88) 100%);
+      pointer-events: none;
+    }
+    .luxury-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(11, 20, 17, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      color: #fbbf24;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .luxury-cover-desc {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: #fff;
+    }
+    .luxury-cover-desc strong {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #f0fdf4;
+    }
+    .luxury-cover-desc span {
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
+    /* Filtros */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 25px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: #052e16;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Grade de Produtos */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-bottom: 90px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .product-card:hover { 
+      transform: translateY(-5px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+    }
+    
+    .product-thumb-wrapper {
+      height: 190px;
+      background: radial-gradient(circle at 50% 50%, #152922 0%, #0d1a15 80%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-thumb-wrapper svg {
+      height: 140px;
+      width: auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-thumb-wrapper svg {
+      transform: scale(1.06);
+    }
+    .badge-pill {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 8px;
+      letter-spacing: 0.3px;
+    }
+    .vol-tag {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+    .product-title { 
+      font-size: 1.15rem; 
+      margin-bottom: 6px; 
+      line-height: 1.35;
+    }
+    .product-desc { 
+      font-size: 0.85rem; 
+      color: var(--text-muted); 
+      margin-bottom: 16px; 
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--card-border);
+    }
+    .price { font-size: 1.35rem; font-weight: 900; color: #34d399; }
+    .old-price { font-size: 0.85rem; color: #64748b; text-decoration: line-through; }
+
+    .add-to-cart {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--primary);
+      color: #34d399;
+      padding: 11px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+    .add-to-cart:hover {
+      background: var(--primary);
+      color: #052e16;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Gaveta Lateral do Carrinho */
+    .cart-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -420px;
+      width: 420px;
+      max-width: 100%;
+      height: 100%;
+      background: #0f1c18;
+      border-left: 1px solid var(--card-border);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 0 35px rgba(0,0,0,0.6);
+    }
+    .cart-drawer.open { right: 0; }
+
+    .cart-header {
+      padding: 22px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .close-cart {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .cart-item-thumb {
+      width: 50px;
+      height: 50px;
+      background: #14241f;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cart-item-thumb svg {
+      height: 40px;
+      width: auto;
+    }
+    .item-details { flex: 1; }
+    .item-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+    .item-price { color: #34d399; font-weight: 800; font-size: 0.95rem; }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .qty-btn {
+      background: #1a2e28;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #f87171;
+      font-size: 0.75rem;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .cart-footer {
+      padding: 22px;
+      border-top: 1px solid var(--card-border);
+      background: #0b1411;
+    }
+    .subtotal-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .checkout-btn {
+      background: #25d366;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+    .checkout-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+    }
+    .checkout-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .hero-banner { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Identificação Conceitual -->
+  <div class="demo-bar">
+    <div><strong>Projeto Conceitual Demonstrativo</strong> &bull; E-commerce com Pedido via WhatsApp</div>
+    <div><span class="badge">Alta Cosmética Botânica</span></div>
+  </div>
+
+  <div class="promo-bar">
+    🌱 Frete Grátis para todo o Brasil em compras acima de R$ 180 &bull; Cupom AURA10 para 10% OFF
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">AURA<span>BOTANICALS</span></a>
+      <button class="cart-btn" onclick="toggleCart()" aria-label="Abrir carrinho de compras">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <span>Meu Pedido</span>
+        <span class="cart-count" id="cartCountBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Banner Hero com Capa Fotográfica de Alta Cosmética -->
+  <div class="container">
+    <div class="hero-banner">
+      <div class="hero-text-col">
+        <span class="luxury-eyebrow">BIO-COSMÉTICA DE PRECISÃO &bull; COLEÇÃO 2026</span>
+        <h1>Cosméticos <span>100% Veganos</span> &amp; Fitoativos de Alta Performance.</h1>
+        <p>
+          Formulação limpa com concentração clínica de ingredientes botânicos biocompatíveis. Extração sustentável por prensagem a frio e biotecnologia verde de alto rendimento cutâneo.
+        </p>
+
+        <!-- Selos de Certificação em Linha -->
+        <div class="cert-badges-inline">
+          <div class="cert-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Ecocert &amp; Cruelty-Free</span>
+          </div>
+          <div class="cert-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            <span>Clean Beauty Zero Petrolatos</span>
+          </div>
+          <div class="cert-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Envio Imediato 24h</span>
+          </div>
+        </div>
+
+        <a href="#productsGrid" class="btn-shop-now">
+          <span>Ver Coleção Completa</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      
+      <!-- Coluna da Capa Fotográfica Botânica de Luxo -->
+      <div class="hero-cover-col">
+        <div class="luxury-cover-frame">
+          <img src="cover.jpg" alt="Aura Botanicals Cosmética Vegana Linha de Séruns e Tratamentos Faciais" class="luxury-cover-img" loading="eager">
+          <div class="luxury-cover-glow"></div>
+          <div class="luxury-badge">
+            <span>✦</span>
+            Coleção Botânica Exclusiva
+          </div>
+          <div class="luxury-cover-desc">
+            <strong>Fitoativos Puros em Vidro Âmbar</strong>
+            <span>Frascos sustentáveis com máxima preservação de ativos antioxidantes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filtros de Categoria -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">Todos os Produtos</button>
+      <button class="filter-btn" onclick="filterCategory('seruns', this)">Séruns &amp; Tratamentos</button>
+      <button class="filter-btn" onclick="filterCategory('oleos', this)">Óleos Puros Prensados</button>
+      <button class="filter-btn" onclick="filterCategory('cremes', this)">Cremes &amp; Hidratação</button>
+    </div>
+
+    <!-- Catálogo de Produtos -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Inserido dinamicamente via JavaScript com SVGs de alta definição -->
+    </div>
+  </div>
+
+  <!-- Gaveta Lateral do Carrinho -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="font-size: 1.15rem;">Seu Pedido no WhatsApp</h3>
+      <button class="close-cart" onclick="toggleCart()" aria-label="Fechar carrinho">&times;</button>
+    </div>
+    
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Itens do carrinho renderizados dinamicamente -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cartTotalText" style="color: #34d399;">R$ 0,00</span>
+      </div>
+      <button class="checkout-btn" onclick="finalizeWhatsAppOrder()">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        <span>Fechar Pedido no WhatsApp</span>
+      </button>
+      <p style="text-align: center; font-size: 0.75rem; color: #64748b; margin-top: 10px;">
+        Os produtos selecionados serão enviados formatados diretamente para o WhatsApp oficial da loja.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // SVGs Vetoriais Realistas para Frascos e Cosméticos
+    const PRODUCT_SVGS = {
+      dropperAmber: `
+        <svg viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bulbo Conta-gotas -->
+          <rect x="42" y="10" width="16" height="20" rx="8" fill="#1e293b"/>
+          <!-- Tampa Dourada -->
+          <rect x="36" y="28" width="28" height="12" rx="3" fill="#d97706"/>
+          <rect x="38" y="31" width="24" height="6" fill="#f59e0b"/>
+          <!-- Gargalo -->
+          <rect x="40" y="40" width="20" height="8" fill="#78350f"/>
+          <!-- Corpo do Frasco Âmbar -->
+          <rect x="25" y="48" width="50" height="95" rx="10" fill="#92400e"/>
+          <!-- Brilho Lateral do Vidro -->
+          <path d="M29 55 L34 55 L34 135 L29 135 Z" fill="#fbbf24" fill-opacity="0.3"/>
+          <!-- Rótulo Minimalista Bege -->
+          <rect x="28" y="70" width="44" height="55" rx="3" fill="#fef3c7"/>
+          <line x1="33" y1="80" x2="67" y2="80" stroke="#78350f" stroke-width="2"/>
+          <line x1="36" y1="88" x2="64" y2="88" stroke="#92400e" stroke-width="1.2"/>
+          <line x1="40" y1="94" x2="60" y2="94" stroke="#b45309" stroke-width="1"/>
+          <!-- Sombra da Base -->
+          <ellipse cx="50" cy="148" rx="26" ry="6" fill="#000000" fill-opacity="0.4"/>
+        </svg>
+      `,
+      dropperEmerald: `
+        <svg viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="42" y="10" width="16" height="20" rx="8" fill="#064e3b"/>
+          <rect x="36" y="28" width="28" height="12" rx="3" fill="#10b981"/>
+          <rect x="38" y="31" width="24" height="6" fill="#34d399"/>
+          <rect x="40" y="40" width="20" height="8" fill="#047857"/>
+          <rect x="25" y="48" width="50" height="95" rx="10" fill="#065f46"/>
+          <path d="M29 55 L34 55 L34 135 L29 135 Z" fill="#6ee7b7" fill-opacity="0.35"/>
+          <rect x="28" y="70" width="44" height="55" rx="3" fill="#ecfdf5"/>
+          <line x1="33" y1="80" x2="67" y2="80" stroke="#065f46" stroke-width="2"/>
+          <line x1="36" y1="88" x2="64" y2="88" stroke="#047857" stroke-width="1.2"/>
+          <circle cx="50" cy="102" r="4" fill="#10b981"/>
+          <ellipse cx="50" cy="148" rx="26" ry="6" fill="#000000" fill-opacity="0.4"/>
+        </svg>
+      `,
+      jarBamboo: `
+        <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Tampa de Madeira Bambu -->
+          <rect x="20" y="45" width="80" height="22" rx="5" fill="#d97706"/>
+          <line x1="22" y1="52" x2="98" y2="52" stroke="#b45309" stroke-width="1.5"/>
+          <line x1="22" y1="59" x2="98" y2="59" stroke="#92400e" stroke-width="1"/>
+          <!-- Corpo Pote de Vidro Fosco -->
+          <rect x="24" y="67" width="72" height="65" rx="8" fill="#1e293b"/>
+          <rect x="25" y="68" width="70" height="63" rx="7" fill="#334155" fill-opacity="0.7"/>
+          <!-- Rótulo Branco Fosco -->
+          <rect x="30" y="80" width="60" height="38" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+          <line x1="38" y1="90" x2="82" y2="90" stroke="#0f172a" stroke-width="1.8"/>
+          <line x1="42" y1="98" x2="78" y2="98" stroke="#64748b" stroke-width="1"/>
+          <line x1="46" y1="104" x2="74" y2="104" stroke="#10b981" stroke-width="1.5"/>
+          <!-- Sombra da Base -->
+          <ellipse cx="60" cy="140" rx="36" ry="7" fill="#000000" fill-opacity="0.45"/>
+        </svg>
+      `,
+      dropperApothecary: `
+        <svg viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="42" y="10" width="16" height="20" rx="8" fill="#ffffff"/>
+          <rect x="36" y="28" width="28" height="12" rx="3" fill="#cbd5e1"/>
+          <rect x="40" y="40" width="20" height="8" fill="#94a3b8"/>
+          <rect x="25" y="48" width="50" height="95" rx="10" fill="#f8fafc" fill-opacity="0.85"/>
+          <path d="M29 55 L34 55 L34 135 L29 135 Z" fill="#ffffff"/>
+          <rect x="28" y="70" width="44" height="55" rx="2" fill="#0f172a"/>
+          <line x1="33" y1="80" x2="67" y2="80" stroke="#ffffff" stroke-width="1.8"/>
+          <line x1="36" y1="88" x2="64" y2="88" stroke="#38bdf8" stroke-width="1.2"/>
+          <line x1="40" y1="94" x2="60" y2="94" stroke="#94a3b8" stroke-width="1"/>
+          <ellipse cx="50" cy="148" rx="26" ry="6" fill="#000000" fill-opacity="0.4"/>
+        </svg>
+      `,
+      bottleGold: `
+        <svg viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="42" y="12" width="16" height="18" rx="6" fill="#b45309"/>
+          <rect x="36" y="28" width="28" height="12" rx="3" fill="#fbbf24"/>
+          <rect x="40" y="40" width="20" height="8" fill="#d97706"/>
+          <rect x="26" y="48" width="48" height="95" rx="12" fill="#78350f"/>
+          <path d="M30 55 L34 55 L34 135 L30 135 Z" fill="#fef08a" fill-opacity="0.4"/>
+          <rect x="29" y="72" width="42" height="50" rx="3" fill="#fef3c7"/>
+          <line x1="35" y1="82" x2="65" y2="82" stroke="#78350f" stroke-width="1.8"/>
+          <line x1="38" y1="89" x2="62" y2="89" stroke="#b45309" stroke-width="1"/>
+          <circle cx="50" cy="100" r="3.5" fill="#d97706"/>
+          <ellipse cx="50" cy="148" rx="25" ry="6" fill="#000000" fill-opacity="0.4"/>
+        </svg>
+      `,
+      jarClay: `
+        <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="45" width="80" height="20" rx="4" fill="#047857"/>
+          <rect x="22" y="48" width="76" height="5" fill="#10b981"/>
+          <rect x="24" y="65" width="72" height="66" rx="8" fill="#064e3b"/>
+          <path d="M28 72 L33 72 L33 124 L28 124 Z" fill="#6ee7b7" fill-opacity="0.25"/>
+          <rect x="30" y="78" width="60" height="40" rx="3" fill="#f0fdf4"/>
+          <line x1="38" y1="88" x2="82" y2="88" stroke="#064e3b" stroke-width="2"/>
+          <line x1="42" y1="96" x2="78" y2="96" stroke="#047857" stroke-width="1.2"/>
+          <circle cx="60" cy="105" r="3" fill="#10b981"/>
+          <ellipse cx="60" cy="140" rx="36" ry="7" fill="#000000" fill-opacity="0.45"/>
+        </svg>
+      `
+    };
+
+    // Catálogo Profissional de Cosméticos
+    const products = [
+      { 
+        id: 1, 
+        category: 'seruns', 
+        name: 'Sérum C-Radiance 15% Pura', 
+        volume: '30 ml',
+        price: 89.90, 
+        oldPrice: 119.00, 
+        desc: 'Vitamina C nanoestabilizada, ácido ferúlico e extrato botânico de camu-camu. Uniformização e luminosidade.', 
+        svgKey: 'dropperAmber', 
+        badge: 'MAIS VENDIDO' 
+      },
+      { 
+        id: 2, 
+        category: 'oleos', 
+        name: 'Óleo Puro de Rosa Mosqueta & Cacay', 
+        volume: '30 ml',
+        price: 74.50, 
+        oldPrice: 92.00, 
+        desc: 'Prensagem a frio rica em ácido trans-retinoico natural. Regeneração profunda e atenuação de linhas finas.', 
+        svgKey: 'dropperEmerald', 
+        badge: '100% ORGÂNICO' 
+      },
+      { 
+        id: 3, 
+        category: 'cremes', 
+        name: 'Creme Noturno Bio-Hialurônico 8D', 
+        volume: '50 g',
+        price: 109.90, 
+        oldPrice: 139.00, 
+        desc: 'Matriz com 8 pesos moleculares de ácido hialurônico, esqualano vegetal e manteiga de murumuru.', 
+        svgKey: 'jarBamboo', 
+        badge: 'ALTA EFICÁCIA' 
+      },
+      { 
+        id: 4, 
+        category: 'seruns', 
+        name: 'Niacinamida 10% + Zinco PCA Clarificante', 
+        volume: '30 ml',
+        price: 79.90, 
+        oldPrice: 99.00, 
+        desc: 'Equilíbrio da barreira dérmica, redução visível de poros e controle inteligente de oleosidade.', 
+        svgKey: 'dropperApothecary', 
+        badge: 'FÓRMULA PURA' 
+      },
+      { 
+        id: 5, 
+        category: 'oleos', 
+        name: 'Elixir Facial Jojoba & Marula Dourada', 
+        volume: '30 ml',
+        price: 68.00, 
+        oldPrice: 85.00, 
+        desc: 'Óleo biomimético não comedogênico de rápida absorção com antioxidantes naturais e ômega 6 e 9.', 
+        svgKey: 'bottleGold', 
+        badge: 'VEGANO' 
+      },
+      { 
+        id: 6, 
+        category: 'cremes', 
+        name: 'Bálsamo Calmante de Argila & Camomila', 
+        volume: '60 g',
+        price: 64.90, 
+        oldPrice: 80.00, 
+        desc: 'Ação fito-reparadora imediata para peles sensibilizadas, com bisabolol orgânico e chá verde.', 
+        svgKey: 'jarClay', 
+        badge: 'CALMANTE' 
+      },
+    ];
+
+    let cart = [
+      { id: 1, name: 'Sérum C-Radiance 15% Pura', price: 89.90, qty: 1, svgKey: 'dropperAmber' }
+    ];
+
+    function renderProducts(items) {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="product-thumb-wrapper">
+            <span class="badge-pill">${p.badge}</span>
+            <span class="vol-tag">${p.volume}</span>
+            ${PRODUCT_SVGS[p.svgKey]}
+          </div>
+          <div>
+            <h3 class="product-title">${p.name}</h3>
+            <p class="product-desc">${p.desc}</p>
+            <div class="price-row">
+              <div>
+                <div style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">À VISTA NO PIX OU CARTÃO</div>
+                <span class="price">R$ ${p.price.toFixed(2).replace('.', ',')}</span>
+              </div>
+              <span class="old-price">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>
+            </div>
+          </div>
+          <button class="add-to-cart" onclick="addToCart(${p.id})">+ Adicionar ao Pedido</button>
+        </div>
+      `).join('');
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (cat === 'all') {
+        renderProducts(products);
+      } else {
+        renderProducts(products.filter(p => p.category === cat));
+      }
+    }
+
+    function toggleCart() {
+      document.getElementById('cartOverlay').classList.toggle('open');
+      document.getElementById('cartDrawer').classList.toggle('open');
+      renderCart();
+    }
+
+    function addToCart(productId) {
+      const prod = products.find(p => p.id === productId);
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: prod.id, name: prod.name, price: prod.price, qty: 1, svgKey: prod.svgKey });
+      }
+      updateCartBadge();
+      toggleCart();
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(c => c.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(c => c.id !== id);
+        }
+      }
+      renderCart();
+      updateCartBadge();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(c => c.id !== id);
+      renderCart();
+      updateCartBadge();
+    }
+
+    function updateCartBadge() {
+      const count = cart.reduce((acc, item) => acc + item.qty, 0);
+      document.getElementById('cartCountBadge').textContent = count;
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = '<div style="text-align: center; color: #94a3b8; padding: 40px 0;">Seu pedido está vazio no momento 🌱</div>';
+        document.getElementById('cartTotalText').textContent = 'R$ 0,00';
+        return;
+      }
+
+      let total = 0;
+      container.innerHTML = cart.map(item => {
+        total += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-thumb">
+              ${PRODUCT_SVGS[item.svgKey]}
+            </div>
+            <div class="item-details">
+              <div class="item-title">${item.name}</div>
+              <div class="item-price">R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}</div>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+                <span style="font-weight: 700; font-size: 0.9rem;">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                <button class="remove-btn" onclick="removeItem(${item.id})">Remover</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartTotalText').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+    }
+
+    function finalizeWhatsAppOrder() {
+      if (cart.length === 0) {
+        alert('Adicione ao menos um produto antes de finalizar o pedido!');
+        return;
+      }
+      let total = 0;
+      let text = 'Olá! Gostaria de finalizar meu pedido na Aura Botanicals:%0A%0A';
+      cart.forEach((i, idx) => {
+        const itemTotal = i.price * i.qty;
+        total += itemTotal;
+        text += `${idx + 1}. *${i.name}* (x${i.qty}) - R$ ${itemTotal.toFixed(2).replace('.', ',')}%0A`;
+      });
+      text += `%0A*Total do Pedido: R$ ${total.toFixed(2).replace('.', ',')}*%0A`;
+      text += '%0APor favor, informe o valor do frete e os dados para pagamento.';
+      
+      const wppUrl = `https://wa.me/5561984030010?text=${text}`;
+      window.open(wppUrl, '_blank');
+    }
+
+    // Inicialização
+    renderProducts(products);
+    updateCartBadge();
+  </script>
+
+</body>
+</html>

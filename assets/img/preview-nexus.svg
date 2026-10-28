@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="nexusBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f1930"/>
+      <stop offset="100%" stop-color="#060912"/>
+    </linearGradient>
+    <linearGradient id="nexusCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14213d"/>
+      <stop offset="100%" stop-color="#0a1224"/>
+    </linearGradient>
+    <linearGradient id="nexusEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="nexusGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#10b981" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo do browser / mockup -->
+  <rect width="800" height="500" rx="16" fill="url(#nexusBg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Barra de controle de janela estilo macOS -->
+  <rect width="800" height="42" fill="#0b1224" rx="16"/>
+  <rect y="26" width="800" height="16" fill="#0b1224"/>
+  <circle cx="26" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="46" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="66" cy="21" r="6" fill="#10b981"/>
+  
+  <!-- Barra de endereço / URL -->
+  <rect x="180" y="9" width="440" height="24" rx="12" fill="#141f36"/>
+  <text x="400" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">
+    🔒 https://nexusprime.consultoria.com.br/inteligencia-tributaria
+  </text>
+
+  <!-- Navbar do site corporativo -->
+  <rect y="42" width="800" height="56" fill="#080d1a" opacity="0.95"/>
+  <text x="40" y="76" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" fill="#ffffff">
+    NEXUS<tspan fill="#10b981">PRIME</tspan>
+  </text>
+  <text x="360" y="75" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1" letter-spacing="1">
+    ÁREAS DE ATUAÇÃO &bull; METODOLOGIA SPED &bull; CASES &bull; GOVERNANÇA
+  </text>
+  <rect x="655" y="54" width="105" height="32" rx="6" fill="url(#nexusEmerald)"/>
+  <text x="707" y="74" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5" fill="#ffffff">
+    FALAR COM SÊNIOR
+  </text>
+
+  <!-- Hero Section da Demonstração -->
+  <rect x="40" y="125" width="235" height="24" rx="12" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1"/>
+  <text x="157" y="141" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#34d399">
+    INTELIGÊNCIA TRIBUTÁRIA B2B &bull; CARF &bull; STJ
+  </text>
+
+  <text x="40" y="185" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="27" fill="#ffffff">
+    Gestão Estratégica &amp; Inteligência
+  </text>
+  <text x="40" y="220" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="27" fill="url(#nexusEmerald)">
+    Tributária de Alta Performance.
+  </text>
+  
+  <text x="40" y="255" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">
+    Auditoria digital cruzada de arquivos SPED Fiscal e recuperação
+  </text>
+  <text x="40" y="273" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">
+    administrativa de créditos acumulados com estrito rigor técnico.
+  </text>
+
+  <!-- Botão CTA Hero -->
+  <rect x="40" y="305" width="185" height="42" rx="8" fill="url(#nexusEmerald)"/>
+  <text x="132" y="331" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+    Agendar Diagnóstico Executivo
+  </text>
+
+  <rect x="238" y="305" width="135" height="42" rx="8" fill="#141f36" stroke="#334155" stroke-width="1"/>
+  <text x="305" y="331" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="12" fill="#cbd5e1">
+    Conhecer Áreas
+  </text>
+
+  <!-- Dashboard Executivo Realista -->
+  <g transform="translate(450, 122)" filter="url(#nexusGlow)">
+    <rect width="310" height="250" rx="14" fill="url(#nexusCard)" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.3"/>
+    
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#f8fafc">
+      Eficiência Fiscal &amp; Economia
+    </text>
+    
+    <rect x="195" y="18" width="95" height="20" rx="10" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="206" cy="28" r="3.5" fill="#34d399"/>
+    <text x="250" y="32" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#34d399">
+      Homologado RFB
+    </text>
+    
+    <text x="20" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="32" fill="#34d399">
+      +34.8%
+    </text>
+    <text x="145" y="65" font-family="'Inter', sans-serif" font-weight="700" font-size="11" fill="#ffffff">
+      Otimização da Carga Tributária
+    </text>
+    <text x="145" y="80" font-family="'Inter', sans-serif" font-size="9" fill="#94a3b8">
+      Via Elisão Fiscal &amp; SPED Cruzado
+    </text>
+
+    <!-- Mini Gráfico de Barras Financeiro -->
+    <g transform="translate(20, 100)">
+      <rect width="270" height="85" rx="8" fill="#080d1a" stroke="#1e293b" stroke-width="1"/>
+      <text x="14" y="20" font-family="'Inter', sans-serif" font-size="8.5" fill="#64748b">ECONOMIA TRIBUTÁRIA ACUMULADA</text>
+      <text x="256" y="20" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10.5" fill="#34d399">+R$ 48.2M</text>
+      
+      <!-- Barras -->
+      <rect x="25" y="48" width="30" height="24" rx="3" fill="#334155"/>
+      <rect x="75" y="38" width="30" height="34" rx="3" fill="#334155"/>
+      <rect x="125" y="30" width="30" height="42" rx="3" fill="#334155"/>
+      <rect x="175" y="22" width="30" height="50" rx="3" fill="#0284c7"/>
+      <rect x="225" y="14" width="30" height="58" rx="3" fill="#10b981"/>
+
+      <text x="40" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" fill="#64748b">2022</text>
+      <text x="90" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" fill="#64748b">2023</text>
+      <text x="140" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" fill="#64748b">2024</text>
+      <text x="190" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" fill="#64748b">2025</text>
+      <text x="240" y="80" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7.5" fill="#34d399">2026</text>
+    </g>
+
+    <!-- Rodapé do Card -->
+    <text x="20" y="210" font-family="'Inter', sans-serif" font-size="9.5" fill="#cbd5e1">
+      Recuperação Administrativa: <tspan fill="#38bdf8" font-weight="700">45 a 90 dias úteis</tspan>
+    </text>
+    <text x="20" y="228" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">
+      Aproveitamento lícito via PER/DCOMP sem litígio judicial
+    </text>
+  </g>
+</svg>
